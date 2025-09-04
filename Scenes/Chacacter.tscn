@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://cldi8c0ynrd73"]
 
-[ext_resource type="Script" path="res://Scenes/Chacacter.gd" id="1_wgkjc"]
+[ext_resource type="Script" uid="uid://1qjcvc8cex4a" path="res://Scenes/Chacacter.gd" id="1_wgkjc"]
 [ext_resource type="Texture2D" uid="uid://nluklfe7yn2a" path="res://idle.png" id="2_35sh3"]
 [ext_resource type="Texture2D" uid="uid://dyms04mjtrg1k" path="res://fall.png" id="2_k0gg6"]
 [ext_resource type="Texture2D" uid="uid://3qveax1xw6ox" path="res://fall_left.png" id="3_5vgaf"]
@@ -398,4 +398,8 @@ autostart = true
 
 [node name="CoyoteTimerJ" type="Timer" parent="."]
 wait_time = 0.05
+one_shot = true
+
+[node name="PauseTimer" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
