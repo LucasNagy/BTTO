@@ -1,0 +1,313 @@
+[gd_scene load_steps=17 format=3 uid="uid://tthan55p16be"]
+
+[ext_resource type="Script" path="res://Scenes/Intro.gd" id="1_c5f1g"]
+[ext_resource type="Texture2D" uid="uid://80ilm04qm8vm" path="res://owercase.png" id="1_glr7p"]
+[ext_resource type="Texture2D" uid="uid://dk6qe040hv6ta" path="res://Intro03.png" id="3_kd3sf"]
+[ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi's Handwriting.ttf" id="4_dag08"]
+[ext_resource type="Script" path="res://Scenes/Label.gd" id="5_o2aup"]
+[ext_resource type="AudioStream" uid="uid://hy5yxyky4j7" path="res://stadsmiljö_extended.mp3" id="6_uysa4"]
+[ext_resource type="Texture2D" uid="uid://chwkx6mea3spy" path="res://Intro01.png" id="7_cyby5"]
+[ext_resource type="Texture2D" uid="uid://dmm675oslyp43" path="res://Intro04.png" id="7_fgqlc"]
+[ext_resource type="Texture2D" uid="uid://dagbugvqps7hd" path="res://Intro02.png" id="8_bmcs6"]
+[ext_resource type="Texture2D" uid="uid://b5dmf4hbegle8" path="res://Intro05.png" id="8_wuwf4"]
+[ext_resource type="Texture2D" uid="uid://ce3mmvpit001h" path="res://Intro06.png" id="9_7plgi"]
+[ext_resource type="Texture2D" uid="uid://buj3ju1snogf5" path="res://Intro07.png" id="12_yxej2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr722"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_53ovs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blank:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["OMEGA"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Story:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Blank2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Story:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_kd3sf")]
+}
+
+[sub_resource type="Animation" id="Animation_ljc4m"]
+resource_name = "story in"
+length = 56.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blank:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.5, 8, 8.5, 14.2, 14.7, 15.2, 19.6, 20.1, 20.6, 23.2, 23.7, 24.2, 27.2, 27.7, 28.2, 31.4, 31.9, 32.4, 34.8, 35.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(47.9005),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"done1"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.3, 8.2, 8.3, 14.9, 15, 20.3, 20.4, 23.9, 24, 27.9, 28, 31.9, 32, 36.3, 36.4, 45.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["LIFE IS ABOUT SUCCESS, AND YOU, YOU ARE LUCKY.", "", "YOU MADE IT THIS FAR. MADE IT TO THE CITY.
+", "", "MADE IT TO SUCCESS.", "", "LOOK AT YOU.", "", "AREN'T YOU GRATEFUL?", "", "BE GRATEFUL. YOU ARE LUCKY.", "", "", "", "SO VERY, VERY LUCKY.", ""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Label:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.3, 4.8, 5, 6.3, 8.2, 8.3, 10.8, 11, 13.2, 14.9, 15, 17.7, 20.3, 20.4, 21.7, 23.9, 24, 25.8, 27.9, 28, 30.6, 31.9, 32, 36, 36.3, 36.4, 41),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.705, 0.705, 1.0, 1.0, 0.0, 0.526316, 0.526, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Story:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_uysa4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Blank2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Story:texture")
+tracks/8/interp = 0
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8, 14.7, 20.1, 23.7, 27.7, 31.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_cyby5"), ExtResource("8_bmcs6"), ExtResource("3_kd3sf"), ExtResource("7_fgqlc"), ExtResource("8_wuwf4"), ExtResource("9_7plgi"), ExtResource("12_yxej2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kx6ls"]
+_data = {
+"RESET": SubResource("Animation_53ovs"),
+"story in": SubResource("Animation_ljc4m")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_c5f1g")
+
+[node name="OWERCASE" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_glr7p")
+
+[node name="Blank2" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1969.0
+offset_bottom = 1128.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Story" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(966.333, 415.5)
+scale = Vector2(2.67037, 2.67037)
+texture = ExtResource("3_kd3sf")
+
+[node name="Blank" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1969.0
+offset_bottom = 1128.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 380.0
+offset_top = 779.0
+offset_right = 550.0
+offset_bottom = 840.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(7, 7)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qr722")
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_dag08")
+theme_override_font_sizes/font_size = 8
+text = "OMEGA"
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("5_o2aup")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kx6ls")
+}
+autoplay = "story in"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

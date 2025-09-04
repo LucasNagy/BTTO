@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://govgh7y8lwdh"]
+
+[ext_resource type="Texture2D" uid="uid://crcu6gryfwuil" path="res://skylt.png" id="1_iau33"]
+[ext_resource type="Script" path="res://Scenes/sign.gd" id="2_rmt51"]
+[ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi's Handwriting.ttf" id="3_v737w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x50u0"]
+size = Vector2(14, 24)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h4rl"]
+bg_color = Color(0.745098, 0.6, 0.34902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.658824, 0.462745, 0.262745, 1)
+
+[node name="Sign" type="Area2D"]
+texture_filter = 1
+script = ExtResource("2_rmt51")
+
+[node name="Area2D" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+texture = ExtResource("1_iau33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_x50u0")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -75.2
+offset_right = 65.0
+offset_bottom = -56.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8h4rl")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 125.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0.223529, 0.207843, 0.176471, 1)
+theme_override_fonts/font = ExtResource("3_v737w")
+theme_override_font_sizes/font_size = 8
+text = "HELLO"
+autowrap_mode = 3
+
+[node name="Stroke" type="Label" parent="Panel/Label"]
+show_behind_parent = true
+layout_mode = 1
+offset_left = 1.0
+offset_top = 1.2
+offset_right = 122.0
+offset_bottom = 11.2
+theme_override_colors/font_color = Color(0.658824, 0.462745, 0.262745, 1)
+theme_override_fonts/font = ExtResource("3_v737w")
+theme_override_font_sizes/font_size = 8
+text = "HELLO"
+autowrap_mode = 3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

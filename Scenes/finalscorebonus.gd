@@ -1,0 +1,6 @@
+extends Label
+@onready var global = $"/root/Global"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	text = str(global.hp) + str("/69")

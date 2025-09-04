@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5gxibn58bw3f"]
+
+[ext_resource type="Script" path="res://Scenes/restart.gd" id="1_qhxny"]
+[ext_resource type="StyleBox" uid="uid://drtmew51y4o4m" path="res://Scenes/button.tres" id="2_apgmk"]
+[ext_resource type="StyleBox" uid="uid://dmel4168eko56" path="res://Scenes/button_hover.tres" id="3_c2w0i"]
+[ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi's Handwriting.ttf" id="4_01by3"]
+[ext_resource type="StyleBox" uid="uid://8ddg0ounj738" path="res://Scenes/button_press.tres" id="4_3ajcq"]
+[ext_resource type="AudioStream" uid="uid://ejgojlkuqlcw" path="res://game over.wav" id="6_k43yb"]
+[ext_resource type="AudioStream" uid="uid://cxgvx1jabfqw6" path="res://dead2.mp3" id="7_c6dys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4ot2"]
+bg_color = Color(0.0431373, 0, 0.101961, 1)
+
+[node name="dead" type="Node2D"]
+script = ExtResource("1_qhxny")
+
+[node name="bkg" type="Panel" parent="."]
+offset_left = -22.0
+offset_top = -18.0
+offset_right = 1951.0
+offset_bottom = 1101.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c4ot2")
+
+[node name="Label" type="Label" parent="bkg"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -963.5
+offset_top = -190.5
+offset_right = -643.5
+offset_bottom = -154.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+theme_override_fonts/font = ExtResource("4_01by3")
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReStart" type="Button" parent="bkg"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.5
+offset_top = 14.5
+offset_right = -224.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(9, 9)
+theme_override_colors/font_color = Color(0.701961, 0.278431, 0.0352941, 1)
+theme_override_colors/font_pressed_color = Color(0.760784, 0.376471, 0.0470588, 1)
+theme_override_colors/font_hover_color = Color(0.666667, 0.231373, 0.0313726, 1)
+theme_override_colors/font_focus_color = Color(0.760784, 0.376471, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("4_01by3")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("2_apgmk")
+theme_override_styles/hover = ExtResource("3_c2w0i")
+theme_override_styles/pressed = ExtResource("4_3ajcq")
+theme_override_styles/focus = ExtResource("4_3ajcq")
+text = "CONTINUE"
+
+[node name="game over" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_k43yb")
+volume_db = -12.005
+autoplay = true
+
+[node name="scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_c6dys")
+volume_db = 3.502
+autoplay = true
+
+[connection signal="pressed" from="bkg/ReStart" to="." method="_on_re_start_pressed"]

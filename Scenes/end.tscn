@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwl80txue76pi"]
+
+[ext_resource type="Script" path="res://Scenes/restart.gd" id="1_66rki"]
+[ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi's Handwriting.ttf" id="2_n28vn"]
+[ext_resource type="StyleBox" uid="uid://drtmew51y4o4m" path="res://Scenes/button.tres" id="3_no7wl"]
+[ext_resource type="Script" path="res://Scenes/finalscore.gd" id="3_srx56"]
+[ext_resource type="StyleBox" uid="uid://dmel4168eko56" path="res://Scenes/button_hover.tres" id="4_1xyw8"]
+[ext_resource type="StyleBox" uid="uid://8ddg0ounj738" path="res://Scenes/button_press.tres" id="5_sd0o1"]
+[ext_resource type="Texture2D" uid="uid://ctfp5aoawch5v" path="res://paper-icon.png" id="8_506wc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4ot2"]
+bg_color = Color(0.0431373, 0, 0.101961, 1)
+
+[node name="end" type="Node2D"]
+script = ExtResource("1_66rki")
+metadata/_edit_vertical_guides_ = [704.0, 1218.0]
+
+[node name="bkg" type="Panel" parent="."]
+offset_left = -22.0
+offset_top = -18.0
+offset_right = 1951.0
+offset_bottom = 1101.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c4ot2")
+
+[node name="Label" type="Label" parent="bkg"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -957.5
+offset_top = -365.5
+offset_right = -683.5
+offset_bottom = -322.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+theme_override_fonts/font = ExtResource("2_n28vn")
+text = "THE END
+:)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="points" type="Label" parent="bkg"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.5
+offset_top = -27.4999
+offset_right = 46.5
+offset_bottom = 15.5001
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(0.996078, 0.85098, 0.647059, 1)
+theme_override_fonts/font = ExtResource("2_n28vn")
+text = "0/165"
+vertical_alignment = 1
+script = ExtResource("3_srx56")
+
+[node name="ReStart" type="Button" parent="bkg"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.5
+offset_top = 197.5
+offset_right = -202.5
+offset_bottom = 214.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(9, 9)
+theme_override_colors/font_color = Color(0.701961, 0.278431, 0.0352941, 1)
+theme_override_colors/font_pressed_color = Color(0.760784, 0.376471, 0.0470588, 1)
+theme_override_colors/font_hover_color = Color(0.666667, 0.231373, 0.0313726, 1)
+theme_override_colors/font_focus_color = Color(0.760784, 0.376471, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("2_n28vn")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_no7wl")
+theme_override_styles/hover = ExtResource("4_1xyw8")
+theme_override_styles/pressed = ExtResource("5_sd0o1")
+theme_override_styles/focus = ExtResource("5_sd0o1")
+text = "RESTART"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1185, 590)
+scale = Vector2(10, 10)
+texture = ExtResource("8_506wc")
+
+[connection signal="pressed" from="bkg/ReStart" to="." method="_on_re_start_pressed"]
