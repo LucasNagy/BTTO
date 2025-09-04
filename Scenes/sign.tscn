@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://govgh7y8lwdh"]
 
 [ext_resource type="Texture2D" uid="uid://crcu6gryfwuil" path="res://skylt.png" id="1_iau33"]
-[ext_resource type="Script" path="res://Scenes/sign.gd" id="2_rmt51"]
-[ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi's Handwriting.ttf" id="3_v737w"]
+[ext_resource type="Script" uid="uid://bqwujfwjle5u2" path="res://Scenes/sign.gd" id="2_rmt51"]
+[ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi_s Handwriting.ttf" id="3_v737w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x50u0"]
 size = Vector2(14, 24)
@@ -13,7 +13,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.658824, 0.462745, 0.262745, 1)
+border_color = Color(0.533333, 0.454902, 0.321569, 1)
 
 [node name="Sign" type="Area2D"]
 texture_filter = 1
@@ -48,7 +48,7 @@ offset_left = 4.0
 offset_top = 6.0
 offset_right = 125.0
 offset_bottom = 16.0
-theme_override_colors/font_color = Color(0.223529, 0.207843, 0.176471, 1)
+theme_override_colors/font_color = Color(0.184314, 0.211765, 0.243137, 1)
 theme_override_fonts/font = ExtResource("3_v737w")
 theme_override_font_sizes/font_size = 8
 text = "HELLO"
@@ -61,7 +61,7 @@ offset_left = 1.0
 offset_top = 1.2
 offset_right = 122.0
 offset_bottom = 11.2
-theme_override_colors/font_color = Color(0.658824, 0.462745, 0.262745, 1)
+theme_override_colors/font_color = Color(0.533333, 0.454902, 0.321569, 1)
 theme_override_fonts/font = ExtResource("3_v737w")
 theme_override_font_sizes/font_size = 8
 text = "HELLO"

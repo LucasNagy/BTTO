@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://bhwnm5lgb2c6e"]
 
-[ext_resource type="Script" path="res://Scenes/Outro.gd" id="1_icu5p"]
+[ext_resource type="Script" uid="uid://b4e8ljl483ba4" path="res://Scenes/outro.gd" id="1_icu5p"]
 [ext_resource type="AudioStream" uid="uid://b8x5sf32sdl4d" path="res://Slutscen.mp3" id="3_uybsp"]
 [ext_resource type="Texture2D" uid="uid://dk6qe040hv6ta" path="res://Intro03.png" id="3_y0dr2"]
-[ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi's Handwriting.ttf" id="4_3exjc"]
+[ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi_s Handwriting.ttf" id="4_3exjc"]
 [ext_resource type="Texture2D" uid="uid://bqro2wue0i704" path="res://sjukhus1.png" id="4_o737x"]
 [ext_resource type="Texture2D" uid="uid://dlckeesn8jpdk" path="res://sjukhus2.png" id="6_2mtmj"]
 [ext_resource type="Texture2D" uid="uid://ck0wsobr0qosi" path="res://sjukhus3.png" id="7_bip2y"]
@@ -205,10 +205,10 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kx6ls"]
 _data = {
-"Fade In": SubResource("Animation_j41ln"),
-"Fade Out": SubResource("Animation_ra2et"),
-"RESET": SubResource("Animation_53ovs"),
-"story in": SubResource("Animation_ljc4m")
+&"Fade In": SubResource("Animation_j41ln"),
+&"Fade Out": SubResource("Animation_ra2et"),
+&"RESET": SubResource("Animation_53ovs"),
+&"story in": SubResource("Animation_ljc4m")
 }
 
 [node name="Outro" type="Node2D"]
@@ -265,7 +265,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_kx6ls")
+&"": SubResource("AnimationLibrary_kx6ls")
 }
 autoplay = "story in"
 
