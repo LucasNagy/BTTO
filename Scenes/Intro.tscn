@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dk6qe040hv6ta" path="res://Intro03.png" id="3_kd3sf"]
 [ext_resource type="FontFile" uid="uid://cugynyrilicoy" path="res://Rebbi_s Handwriting.ttf" id="4_dag08"]
 [ext_resource type="Script" uid="uid://c0yvhqt7u03ki" path="res://Scenes/Label.gd" id="5_o2aup"]
-[ext_resource type="AudioStream" uid="uid://hy5yxyky4j7" path="res://stadsmiljö_extended.mp3" id="6_uysa4"]
+[ext_resource type="AudioStream" uid="uid://cdjm20m3vlhdc" path="res://stadsmiljo_extended.mp3" id="6_uysa4"]
 [ext_resource type="Texture2D" uid="uid://chwkx6mea3spy" path="res://Intro01.png" id="7_cyby5"]
 [ext_resource type="Texture2D" uid="uid://dmm675oslyp43" path="res://Intro04.png" id="7_fgqlc"]
 [ext_resource type="Texture2D" uid="uid://dagbugvqps7hd" path="res://Intro02.png" id="8_bmcs6"]

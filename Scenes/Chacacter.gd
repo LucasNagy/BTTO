@@ -12,7 +12,6 @@ const wall_jump = 1050
 @onready var coyote_timer_w = $CoyoteTimerW
 @onready var coyote_timer_c = $CoyoteTimerC
 @onready var coyote_timer_j = $CoyoteTimerJ
-@onready var pause_timer = $PauseTimer
 @onready var camera_2d = $Camera2D
 
 # RAY CASTS
@@ -94,30 +93,24 @@ func _physics_process(delta):
 	
 	
 	# GRAVITY  
-	if !pause_timer.is_stopped():
-		velocity.y = 0
-	elif not is_on_floor():
+	if not is_on_floor():
 		velocity.y += gravity * delta
-	if velocity.y > 0:
+	elif velocity.y > 0:
 		velocity.y += gravity * delta * grav_adjust
-	
+		
 	# JUMP FUNCTION
 	if Input.is_action_just_pressed("jump"):
-		if pause_timer.is_stopped() and (is_on_wall_only() and (Input.is_action_pressed("right") || Input.is_action_pressed("left"))):
-			pause_timer.start()
 		if (is_on_floor() || !coyote_timer.is_stopped()):
 			jump.play()
 			velocity.y = JUMP_VELOCITY
 			coyote_timer_j.stop()
-		elif (is_on_wall_only() and Input.is_action_pressed("right") || !coyote_timer_w.is_stopped()):
+		if (is_on_wall_only() and Input.is_action_pressed("right") || !coyote_timer_w.is_stopped()):
 			jump.play()
-			await pause_timer.timeout
 			velocity.y = JUMP_VELOCITY + jump_wall
 			velocity.x = -wall_jump
 			coyote_timer_j.stop()
-		elif (is_on_wall_only() and Input.is_action_pressed("left") || !coyote_timer_w.is_stopped()):
+		if (is_on_wall_only() and Input.is_action_pressed("left") || !coyote_timer_w.is_stopped()):
 			jump.play()
-			await pause_timer.timeout
 			velocity.y = JUMP_VELOCITY + jump_wall
 			velocity.x = wall_jump
 			coyote_timer_j.stop()
@@ -129,20 +122,19 @@ func _physics_process(delta):
 		coyote_timer_j.stop()
 	if is_on_wall_only() and Input.is_action_pressed("right") and !coyote_timer_j.is_stopped():
 		jump.play()
-		await pause_timer.timeout
 		velocity.y = JUMP_VELOCITY + jump_wall
 		velocity.x = -wall_jump
 		coyote_timer_j.stop()
 	if is_on_wall_only() and Input.is_action_pressed("left") and !coyote_timer_j.is_stopped():
 		jump.play()
-		await pause_timer.timeout
 		velocity.y = JUMP_VELOCITY + jump_wall
 		velocity.x = wall_jump
 		coyote_timer_j.stop()
+	
 		
 	# RUN FUNCTION
 	var direction = Input.get_axis("left", "right")
-	if direction and pause_timer.is_stopped():
+	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, 90.0)
 	else:
 		velocity.x = move_toward(velocity.x, 0, 40)
@@ -181,7 +173,6 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	
 	# JUMP MARGIN
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()
@@ -207,9 +198,8 @@ func wall_slide(delta):
 			is_wall_sliding = false
 	else:
 		is_wall_sliding = false
-	
 	# WALL SLIDE FUNCTION
-	if is_wall_sliding and pause_timer.is_stopped():
+	if is_wall_sliding:
 		velocity.y += (wall_friction * delta)
 		velocity.y = min(velocity.y, wall_friction)
 	
